@@ -1,0 +1,151 @@
+/* Styling for the section */
+.py-5 {
+    padding: 3rem 0;
+}
+.my-5 {
+    margin: 3rem 0;
+}
+/* Styling for the container */
+.containers {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    /*flex-direction: column;*/
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+/* Styling for the h1 heading */
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+/* Styling for the background and rounded edges of the form */
+.bg-white {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+
+    padding: 15px;
+    margin: 2%;
+}
+.shadow {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+.p-4{
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+    justify-content: center;
+}
+/* Styling for the profile tab navigation */
+.profile-tab-nav {
+    width: 20%;
+    min-width: 200px;
+    border-right: 1px solid #e9ecef;
+}
+/* Styling for the image and username text in the profile tab navigation */
+.img-circle {
+    width: 150px;
+    /*height: 160px;*/
+    border-radius: 50%;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+
+.mb-4{
+    margin: 10px;
+    color: black;
+}
+.row{
+    margin: 5px;
+    margin-bottom: 30px;
+}
+.col-md-6{
+    margin: 8px;
+    height: 70px;
+}
+.form-group{
+    margin: 8px;
+    display: grid;
+
+}
+/* Styling for the navigation links in the profile tab navigation */
+.nav-link {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #495057;
+    text-align: center;
+}
+.nav-link.active {
+    background-color: #3b71ca;
+    color: white;
+}
+/* Styling for the form in the tab content */
+.form-control {
+    font-size: 1.1rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.25rem;
+    border: 1px solid #e9ecef;
+}
+/* Styling for the update and cancel buttons */
+button[type="submit"] {
+    background-color: #3b71ca;
+    color: white;
+    font-size: 1rem;
+    padding: 0.3rem 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    margin: 10px;
+}
+
+ .btn-primary{
+    background-color: #3b71ca;
+    color: white;
+    font-size: 1rem;
+    padding: 0.3rem 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    margin: 10px;
+}
+
+.upload{
+    width: 100px;
+    position: relative;
+    margin: auto;
+}
+
+.upload img{
+    border-radius: 50%;
+    border: 6px solid #eaeaea;
+}
+
+.upload .round{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: #00B4FF;
+    width: 32px;
+    height: 32px;
+    line-height: 33px;
+    text-align: center;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.upload .round input[type = "file"]{
+    position: absolute;
+    transform: scale(2);
+    opacity: 0;
+}
+
+input[type=file]::-webkit-file-upload-button{
+    cursor: pointer;
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JobCom: Find you dream jod and Explore the Jobs World </title>
+  <!-- CSS -->
+  <link rel="stylesheet" th:href="@{~/css/Newhome.css}" />
+  <link rel="stylesheet" th:href="@{~/css/jobs.css}">
+  <link rel="shortcut icon" type="x-icon" th:href="@{~/Images/logo.png}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+</head>
+<body>
+
+<div th:replace="Fragments/userNav.html :: navigation"></div>
+
+
+<!-- Header -->
+<header class="header">
+  <div class="container flex">
+    <div class="text">
+      <h1 class="mb">
+        Find the best <br />
+        <span>JOB</span> At JobCom
+      </h1>
+
+      <p class="mb">
+        Unlock Your Career Potential: Discover Your Dream Job Today!
+      </p>
+
+      <a href="#why-us" class="btn mt">Get Started Now</a>
+    </div>
+
+    <div class="visual">
+      <img
+              th:src="@{~/Images/Hiring.gif}"
+              alt=""
+      />
+    </div>
+  </div>
+</header>
+<!-- End Header -->
+
+<!-- Why Us -->
+<div class="section" id="why-us">
+  <div class="container flex">
+    <div class="text">
+      <h2 class="primary mb">Why Choose Us?</h2>
+      <h3 class="secondary mb">Consulatation with Expert.</h3>
+      <p class="tertiary">
+        Your Path to Informed Decisions
+
+      </p>
+
+      <h3 class="secondary mb">Consulatation with Expert.</h3>
+      <p class="tertiary">
+        At JobCom, we understand the value of making well-informed decisions. That's why we offer you the unique opportunity to engage in consultations with our team of seasoned experts. Our commitment to excellence drives us to ensure that you have all the necessary insights at your disposal, empowering you to make choices that align with your goals.
+      </p>
+    </div>
+    <div class="visual">
+      <img
+              th:src="@{~/Images/why.gif}"
+              alt=""
+      />
+    </div>
+  </div>
+</div>
+<!-- End Why Us -->
+
+<!-- Explore -->
+<div class="section" id="explore">
+  <div class="container flex">
+    <div class="visual">
+      <img
+              th:src="@{~/Images/explore.gif}"
+              alt=""
+      />
+    </div>
+    <div class="text">
+      <h2 class="primary mb">
+        Explore Our Job Center <br />
+
+      </h2>
+      <p class="tertiary mb">
+        Your Gateway to Exciting Opportunities!
+        <br/>
+
+        At JobCom, we believe that great achievements are made possible by great people. That's why we're thrilled to introduce you to our dynamic and diverse Job Center, where possibilities and passions converge to shape extraordinary careers.
+      </p>
+
+      <a th:href="@{~/user/jobs}" class="btn mt">Get Started Now</a>
+    </div>
+  </div>
+</div>
+<!-- End Explore -->
+
+<!-- recuiter -->
+<div class="section" id="recuiter">
+  <h2 class="primary mb">Our Professional Requiters</h2>
+  <div class="container flex">
+    <div class="recuiter" th:each="teams:${teamlist}">
+      <img th:src="'data:image/png;base64,'+${teams.imageBase64}"  alt=""/>
+      <h3 class="secondary mb" th:text="${teams.fullname}"></h3>
+      <p class="tertiary mb">
+
+      </p>
+      <a class="btn-2" th:href="${teams.facebook}"  >
+        <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+      </a>
+      <a class="btn-2" th:href="${teams.github}"  >
+        <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+      </a>
+      <a class="btn-2" th:href="${teams.linkedin}"  >
+        <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+      </a>
+    </div>
+
+
+
+  </div>
+</div>
+<!-- End recuiter -->
+
+
+
+<!--jobs-->
+<section id="jobs">
+  <h1 >Jobs with <span>High Demand</span></h1>
+
+  <div class="box">
+    <input type="radio" class="tab-toggle" name="tab-toggle" id="tab1" checked>
+
+    <ul class="tab-list">
+      <li class="tab-item">
+      </li>
+
+    </ul>
+
+    <div class="tab-container">
+
+      <div class="tab-content">
+        <div class="all-jobs">
+
+          <div class="job" th:each="jobs:${joblist}">
+            <!--                        <a th:href="@{~/user/moreinfomation/}+${jobs.id}">-->
+            <img th:src="'data:image/png;base64,'+${jobs.imageBase64}" alt="">
+            <div class="job-desc" >
+              <h6  th:text="${jobs.jobTitle}"></h6>
+              <div class="details">
+
+                <p  th:text="${jobs.address}"></p>
+                <p>Job Type: <span  th:text="${jobs.type}"></span></p>
+                <p  th:text="${jobs.jobTitle}"></p>
+                <p>Salary: <span  th:text="${jobs.salary}"></span></p>
+              </div>
+              <div class="tags">
+                <p  th:text="${jobs.skill1}"></p>
+                <p  th:text="${jobs.skill2}"></p>
+                <p  th:text="${jobs.skill3}"></p>
+                <p  th:text="${jobs.skill4}"></p>
+              </div>
+              <a class="btn"  th:href="@{~/user/moreinfomation/}+${jobs.id}"> Apply</a>
+
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <a th:href="@{~/user/jobs}" class="btn mt">See More</a>
+
+  </div>
+
+</section>
+
+<!-- Discount -->
+<div class="section" id="discount">
+  <div class="container flex">
+    <div class="visual">
+      <img
+              th:src="@{~/Images/searchgraphics.svg}"
+              alt=""
+      />
+    </div>
+    <div class="text">
+      <h2 class="primary mb">
+        Find job this year, Pay Now And Get 25% Discount
+      </h2>
+
+      <p class="tertiary mb">
+        Secure Your Future: Land Your Dream Job This Year and Save 25% - Act Now!
+        <br/>
+
+        Are you ready to take charge of your career and make this year truly remarkable? Look no further! At JobCom, we're excited to offer you an exclusive opportunity to find your dream job while enjoying a limited-time 25% discount on our premium services.
+      </p>
+
+      <a th:href="@{~/user/jobs}" class="btn bt">Find Now</a>
+    </div>
+  </div>
+</div>
+<!-- End Discount -->
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container flex">
+    <p class="tertiary">
+      &copy;  All Rights Reserved.@JobCom
+    </p>
+  </div>
+</footer>
+
+
+<!-- End Footer -->
+
+<!-- Ion Icons Js -->
+<script
+        type="module"
+        src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+></script>
+<script
+        nomodule
+        src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+></script>
+<!-- JS -->
+<script th:src="@{~/js/Nav.js}"></script>
+</body>
+</html>

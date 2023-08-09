@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" th:href="@{~/css/Newhome.css}" />
+  <title>JobCom:Your Personal Information </title>
+  <link rel="shortcut icon" type="x-icon" th:href="@{~/Images/logo.png}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" th:href="@{~/css/profile.css}">
+  <script th:src="@{~/js/Nav.js}"></script>
+
+</head>
+<body>
+<div th:replace="Fragments/userNav.html :: navigation"></div>
+
+<section class="py-5 my-5">
+  <div class="containers">
+    <div class="bg-white shadow rounded-lg d-block d-sm-flex">
+       <div class="img-circle text-center mb-3">
+          <img th:src="@{~/images/logo.png}" alt="Image" class="shadow">
+        </div>
+      <div class="tab-content p-4 p-md-5" id="v-pills-tabContent">
+        <div class="tab-pane fade show active" id="account" role="tabpanel" aria-labelledby="account-tab">
+          <h3 class="mb-4">Account Settings</h3>
+          <form th:method="post" th:action="@{/user/saveuser}" th:object="${user}" enctype="multipart/form-data">
+            <div class="row">
+
+              <div class="col-md-6"  style="height: 200px; width: 200px; justify-content: center">
+                <div class="form-group" >
+
+                  <label>Image</label>
+                  <img th:src="'data:image/png;base64,'+${userdata.imageBase64}"  style="width: 100%; border-radius: 50%" >
+                </div>
+              </div>
+
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" hidden="hidden"  name="id"  th:value="${userdata.id}">
+
+                  <label>Username</label>
+                  <input type="text" class="form-control" required placeholder="username"  name="fullname"   th:value="${userdata.getFullname()}">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="text" class="form-control" required placeholder="smth@gmail.com"  name="email" th:value="${userdata.getEmail()}">
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Phone</label>
+                  <input type="text" class="form-control" required name="mobile_no" th:value="${userdata.getMobileNo()}">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label>Password</label>
+                  <input type="text" class="form-control" placeholder="Enter your new password" required name="password">
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <button type="submit" class="btn btn-primary">Update</button>
+              <a class="btn btn-primary" th:href="@{~/user/appledjobs/}+${userdata.id}">Application</a>
+              <a class="btn btn-primary" th:href="@{~/logout}">logout</a>
+
+            </div>
+          </form>
+
+        </div>
+        <br>
+        <br>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container flex">
+    <p class="tertiary">
+      &copy;  All Rights Reserved.@JobCom
+    </p>
+  </div>
+</footer>
+<!-- Ion Icons Js -->
+<script
+        type="module"
+        src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+></script>
+<script
+        nomodule
+        src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+></script>
+<!-- JS -->
+<script th:src="@{~/js/Nav.js}"></script>
+
+</body>
+
+<!--<script>-->
+<!--  let myPage = "";-->
+<!--  let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));-->
+<!--  listGroupItem.forEach(i=>{-->
+<!--    i.classList.remove("active")-->
+<!--  })-->
+<!--  let activeID = document.getElementById(myPage);-->
+<!--  activeID.classList.add("active");-->
+<!--</script>-->
+</html>

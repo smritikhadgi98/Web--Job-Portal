@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>MeroJagir: Analytics and Statistics</title>
+	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" th:href="@{~/css/Admincss/dash.css}">
+	<link rel="stylesheet" th:href="@{~/css/dash.scss}">
+	<link rel="stylesheet" th:href="@{~/css/Admincss/Addjobs.css}">
+	<link rel="stylesheet" th:href="@{~/css/AdminCss/adminNav.css}">
+	<link th:href="@{~/css/AdminCss/mdb.min.css}" rel="stylesheet">
+	<script th:src="@{~/js/admin/mdb.min.js}"></script>
+	<script th:src="@{~/js/addTeam.js}" defer></script>
+	<link rel="shortcut icon" type="x-icon" th:href="@{~/Images/logo.png}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div th:replace="Fragments/AdminSlide.html :: slider"></div>
+	<section class="main-content">
+		<div class="container">
+			<h1 class="text-center text-uppercase">Analytics and Statistics Card</h1>
+			<br>
+			<br>
+
+			<div class="row">
+				<div class="col-sm-4 offset-sm-2">
+					<div class="stat-card">
+						<div class="stat-card__content">
+							<p class="text-uppercase mb-1 text-muted">Jobs</p>
+							<h2><span th:text="${jobs}"></span></h2>
+							<div>
+								<span class="text-success font-weight-bold mr-1"><i class="fa fa-arrow-up"></i><span th:text="${countJobs}"></span></span>
+								<span class="text-muted">in last 30 days</span>
+							</div>
+						</div>
+						<div class="stat-card__icon stat-card__icon--success">
+							<div class="stat-card__icon-circle">
+								<i class="fa fa-suitcase"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="stat-card">
+						<div class="stat-card__content">
+							<p class="text-uppercase mb-1 text-muted">Users</p>
+							<h2><span th:text="${userss}"></span></h2>
+							<div>
+								<span class="text-danger font-weight-bold mr-1"><i class="fa fa-arrow-down"></i> <span th:text="${date}"></span></span>
+								<span class="text-muted">in last 30 days</span>
+							</div>
+						</div>
+						<div class="stat-card__icon stat-card__icon--primary">
+							<div class="stat-card__icon-circle">
+								<i class="fa fa-users"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-sm-2">
+					<div class="stat-card">
+						<div class="stat-card__content">
+							<p class="text-uppercase mb-1 text-muted">Application</p>
+							<h2><span th:text="${app}"></span></h2>
+							<div>
+								<span class="text-success font-weight-bold mr-1"><i class="fa fa-arrow-up"></i> <span th:text="${countApp}"></span></span>
+								<span class="text-muted">in last 30 days</span>
+							</div>
+						</div>
+						<div class="stat-card__icon stat-card__icon--danger">
+							<div class="stat-card__icon-circle">
+<!--								<i class="fa fa-suitcase"></i>-->
+								<i class="fa fa-solid fa-envelope"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="stat-card">
+						<div class="stat-card__content">
+							<p class="text-uppercase mb-1 text-muted">Members</p>
+							<h2><span th:text="${teams}"></span></h2>
+							<div>
+								<span class="text-danger font-weight-bold mr-1"><i class="fa fa-arrow-down"></i> <span th:text="${countTeam}"></span></span>
+								<span class="text-muted">in last 30 days</span>
+							</div>
+						</div>
+						<div class="stat-card__icon stat-card__icon--warning">
+							<div class="stat-card__icon-circle">
+<!--								<i class="fa fa-users"></i>-->
+								<i class="fa fa-solid fa-users"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 offset-sm-2">
+					<div class="stat-card">
+						<div class="stat-card__content">
+							<p class="text-uppercase mb-1 text-muted">Contact</p>
+							<h2><span th:text="${countCont}"></span></h2>
+							<div>
+								<span class="text-success font-weight-bold mr-1"><i class="fa fa-arrow-up"></i> <span th:text="${countApp}"></span></span>
+								<span class="text-muted">in last 24 Hours</span>
+							</div>
+						</div>
+						<div class="stat-card__icon stat-card__icon--danger">
+							<div class="stat-card__icon-circle">
+								<!--								<i class="fa fa-suitcase"></i>-->
+								<i class="fa fa-solid fa-envelope"></i>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> -->
+</body>
+</html>

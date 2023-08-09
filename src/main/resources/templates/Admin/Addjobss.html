@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <!---<title> Responsive Registration Form | CodingLab </title>--->
+  <link rel="stylesheet" th:href="@{~/css/Admincss/Addjobs.css}">
+  <link rel="stylesheet" th:href="@{~/css/AdminCss/adminNav.css}">
+  <link th:href="@{~/css/AdminCss/mdb.min.css}" rel="stylesheet">
+  <script th:src="@{~/js/admin/mdb.min.js}"></script>
+  <link rel="shortcut icon" type="x-icon" th:href="@{~/Images/logo.png}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script  th:src="@{~/js/addJob.js}" defer></script>
+  <title>JobCom: Add new jobs</title>
+
+</head>
+<body>
+<div th:replace="Fragments/AdminSlide.html :: slider"></div>
+<div class="body-body">
+  <div class="container_div">
+    <div class="title">Registration</div>
+    <div class="content">
+      <form id="form" th:method="post" th:action="@{/jobs/saveJobs}" th:object="${jobs}"
+            enctype="multipart/form-data">
+        <input type="text" hidden th:field="*{id}" th:value="${jobs.id}">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Jobs Title</span>
+            <input type="text" id="jobTitle" placeholder="Enter The title of the jobs" th:field="*{job_title} "
+                   th:value="${jobs.job_title}">
+            <div class="error"></div>
+          </div>
+          <div class="input-box">
+            <span class="details">Category</span>
+            <input type="text" id="category" placeholder="Enter jobs Category" th:field="*{category} "
+                   th:value="${jobs.category}">
+            <div class="error"></div>
+
+          </div>
+          <div class="input-box">
+            <span class="details">Type Of Jobs</span>
+            <input type="text" id="type" placeholder="Enter your email" th:field="*{type} " th:value="${jobs.type}">
+            <div class="error"></div>
+
+          </div>
+          <div class="input-box">
+            <span class="details">Address</span>
+            <input type="text" id="address" placeholder="Enter address of jobs" th:field="*{address} "
+                   th:value="${jobs.address}">
+            <div class="error"></div>
+
+          </div>
+          <div class="input-box">
+            <span class="details">Contact</span>
+            <input type="text" id="contact" placeholder="Enter contact info" th:field="*{contact} "
+                   th:value="${jobs.contact}">
+            <div class="error"></div>
+
+          </div>
+          <div class="input-box">
+            <span class="details">Salary</span>
+            <input type="text" id="salary" placeholder="Enter the salary" th:field="*{salary} "
+                   th:value="${jobs.salary}">
+            <div class="error"></div>
+
+          </div>
+          <div class="input-box">
+            <span class="details">Skill 1</span>
+            <input type="text" id="skill1" placeholder="Enter the skill 1" th:field="*{skill1} "
+                   th:value="${jobs.skill1}">
+            <div class="error"></div>
+
+          </div>
+          <div class="input-box">
+            <span class="details">Skill 2</span>
+            <input type="text" id="skill2" placeholder="Enter the skill 2" th:field="*{skill2} "
+                   th:value="${jobs.skill2}">
+            <div class="error"></div>
+
+          </div>
+          <div class="input-box">
+            <span class="details">Skill 3</span>
+            <input type="text" id="skill3" placeholder="Enter the skill 3" th:field="*{skill3} "
+                   th:value="${jobs.skill3}">
+            <div class="error"></div>
+
+          </div>
+          <div class="input-box">
+            <span class="details">Skill 4</span>
+            <input type="text" id="skill4" placeholder="Enter the skill 4" th:field="*{skill4} "
+                   th:value="${jobs.skill4}">
+            <div class="error"></div>
+
+          </div>
+          <div class="input-box">
+            <span class="details">Time Description</span>
+            <Textarea id="time" placeholder="Enter the Time description" th:field="*{time_description} "
+                      th:value="${jobs.time_description}"></Textarea>
+            <div class="error"></div>
+
+          </div>
+          <div class="input-box">
+            <span class="details">Description</span>
+            <Textarea id="descri" placeholder="Enter the detail description" th:field="*{full_description} "
+                      th:value="${jobs.full_description}"></Textarea>
+            <div class="error"></div>
+
+          </div>
+          <div class="input-box">
+            <span class="details">Education </span>
+            <Textarea id="education" placeholder="Enter the education" th:field="*{education} "
+                      th:value="${jobs.education}"></Textarea>
+            <div class="error"></div>
+
+          </div>
+          <div class="input-box">
+            <span class="details">Qualification 1</span>
+            <Textarea id="qualification" placeholder="Enter the Qualification 1" th:field="*{qualification1} "
+                      th:value="${jobs.qualification2}"></Textarea>
+            <div class="error"></div>
+
+          </div>
+          <div class="input-box">
+            <span class="details">Qualification 2</span>
+            <Textarea id="qualification2" placeholder="Enter the Qualification 2" th:field="*{qualification2} "
+                      th:value="${jobs.qualification2}"></Textarea>
+            <div class="error"></div>
+
+          </div>
+          <div class="input-box">
+            <span class="details">Qualification 3</span>
+            <Textarea id="qualification3" placeholder="Enter the Qualification 3" th:field="*{qualification3} "
+                      th:value="${jobs.qualification3}"></Textarea>
+            <div class="error"></div>
+
+          </div>
+          <div class="input-box">
+            <span class="details">Experience</span>
+            <Textarea id="experience" placeholder="Enter the Experience 1" th:field="*{experience1} "
+                      th:value="${jobs.experience1}"></Textarea>
+            <div class="error"></div>
+
+          </div>
+
+          <div class="input-box">
+            <span class="details">Experience 2</span>
+            <Textarea id="experience2" placeholder="Enter the Experience 2" th:field="*{experience2} "
+                      th:value="${jobs.experience2}"></Textarea>
+            <div class="error"></div>
+
+          </div>
+
+          <div class="input-box">
+            <span class="details">Images </span>
+            <input id="file" type="file" name="image" accept="image/*">
+            <div class="error"></div>
+          </div>
+
+          <div class="button">
+            <input type="submit" value="Register">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+</body>
+<script>
+  let myPage = "addjob";
+  let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+  listGroupItem.forEach(i=>{
+    i.classList.remove("active")
+  })
+  let activeID = document.getElementById(myPage);
+  activeID.classList.add("active");
+</script>
+</html>

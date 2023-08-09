@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--&lt;!&ndash;<form th:object="${searchjobs}" th:action="@{/user}" th:method="post">&ndash;&gt;-->
+<!--    <form method="GET" th:action="@{/user/jobs/}+${letter}">-->
+<!--    <input type="text" th:field="letter" >-->
+
+<!--<input type="submit">-->
+<!--&lt;!&ndash;    <a class="" th:href="@{~/user/jobs/}+${user.id}" ></a>&ndash;&gt;-->
+<!--</form>-->
+<div>
+<input class="search" placeholder="search here"/>
+
+<div>
+    <button  class="search" onclick="
+            if (document.getElementsByClassName('search'). item(0) . value!=='')
+    window.Location='/user/search/' +document.getElementsByClassName('search').item(0). value"> search
+    </button>
+</div>
+</div>
+
+<div th:each="contact:${searchjobs}" style="border: 2px solid red">
+    <p  th:text="${contact.full_description}"></p>
+    <p  th:text="${contact.education}"></p>
+    <p  th:text="${contact.skill2}"></p>
+    <p  th:text="${contact.qualification3}"></p>
+</div>
+</body>
+</html>

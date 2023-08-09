@@ -1,0 +1,231 @@
+/* create account */
+
+.maindiv {
+    width: 100%;
+    /*height: 100vh;*/
+    background-image: url("https://images.unsplash.com/photo-1465056836041-7f43ac27dcb5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8bW91bnRhaW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formdiv {
+    width: 400px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-sizing: border-box;
+    justify-content: center;
+    /* display: none; */
+}
+.formdiv h1,
+.login h1,
+.recover h1,
+.verify h1 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.formdiv input[type="text"],
+.formdiv input[type="email"],
+.formdiv input[type="password"],
+.formdiv textarea,
+.formdiv select{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.formdiv select option{
+    background-color: black;
+}
+
+.formdiv textarea {
+    height: 100px;
+}
+.formdiv input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    background-color: rgb(79, 207, 98);
+    cursor: pointer;
+}
+
+/* .formdiv button{
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+  background-color: rgb(79, 207, 98);
+  cursor: pointer;
+}
+.formdiv button a{
+  text-decoration: none;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  display: block;
+} */
+
+
+.formdiv a,
+.joinfree{
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+}
+
+/* login page */
+.login {
+    width: 400px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-sizing: border-box;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.login input[type="email"],
+.login input[type="password"] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.forget {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    text-align: right;
+    display: block;
+    padding-bottom: 10px;
+    /* margin-top: 20px; */
+}
+.login input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    background-color: rgb(79, 207, 98);
+    cursor: pointer;
+}
+
+/* forgetpassword */
+.forgetpassword {
+    width: 400px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-sizing: border-box;
+    justify-content: center;
+    margin-left: 20px;
+}
+.recover {
+    width: 400px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-sizing: border-box;
+    justify-content: center;
+    margin-left: 20px;
+}
+.recover input[type="email"] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.recover input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    background-color: rgb(79, 207, 98);
+    cursor: pointer;
+}
+
+
+.verify{
+    width: 400px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-sizing: border-box;
+    justify-content: center;
+    margin-left: 20px;
+}
+.verify input[type="number"] {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.verify input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    background-color: rgb(79, 207, 98);
+    cursor: pointer;
+}

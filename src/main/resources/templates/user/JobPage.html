@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JobCom: Find you dream jod and Explore the Jobs World</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />-->
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />-->
+
+
+    <link rel="shortcut icon" type="x-icon" th:href="@{~/Images/logo.png}">
+    <link rel="stylesheet" th:href="@{~/css/jobs.css}">
+    <link rel="stylesheet" th:href="@{~/css/Newhome.css}" />
+
+
+
+</head>
+
+
+<body >
+<div th:replace="Fragments/userNav.html :: navigation"></div>
+
+
+
+<section id="jobs">
+    <h1 >Jobs we <span>Have</span></h1>
+
+
+    <div class="box">
+        <input type="radio" class="tab-toggle" name="tab-toggle" id="tab1" checked>
+        <input type="radio" class="tab-toggle" name="tab-toggle" id="tab2">
+
+        <ul class="tab-list">
+            <li class="tab-item">
+                <label class="tab-trigger" for="tab1">Recent Job</label>
+            </li>
+
+        </ul>
+
+        <div class="tab-container">
+            <div class="tab-content">
+                <div class="all-jobs">
+
+                    <div class="job" th:each="jobs:${joblist}">
+<!--                        <a th:href="@{~/user/moreinfomation/}+${jobs.id}">-->
+                        <img th:src="'data:image/png;base64,'+${jobs.imageBase64}" alt="">
+                        <div class="job-desc" >
+                            <h6  th:text="${jobs.jobTitle}"></h6>
+                            <div class="details">
+
+                                <p  th:text="${jobs.address}"></p>
+                                <p>Job Type: <span  th:text="${jobs.type}"></span></p>
+                                <p  th:text="${jobs.jobTitle}"></p>
+                                <p>Salary: <span  th:text="${jobs.salary}"></span></p>
+                            </div>
+                            <div class="tags">
+                                <p  th:text="${jobs.skill1}"></p>
+                                <p  th:text="${jobs.skill2}"></p>
+                                <p  th:text="${jobs.skill3}"></p>
+                                <p  th:text="${jobs.skill4}"></p>
+                            </div>
+                            <a class="btn"  th:href="@{~/user/moreinfomation/}+${jobs.id}"> Apply</a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+</section>
+
+<footer class="footer">
+    <div class="container flex">
+        <p class="tertiary">
+            &copy;  All Rights Reserved.@Mero Jagir
+        </p>
+    </div>
+</footer>
+
+<!-- Ion Icons Js -->
+<script
+        type="module"
+        src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"
+></script>
+<script
+        nomodule
+        src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"
+></script>
+<!-- JS -->
+<script th:src="@{~/js/Nav.js}"></script>
+</body>
+
+</html>

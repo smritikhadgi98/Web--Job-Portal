@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JobCom: Your All Application</title>
+<!--    <link rel="stylesheet" th:href="@{~/css/JobListStyle.css}">-->
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css"/>
+    <link rel="stylesheet" th:href="@{~/css/applied.css}" />
+    <link rel="shortcut icon" type="x-icon" th:href="@{~/Images/logo.png}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<!--    <link rel="stylesheet" th:href="@{~/css/Newhome.css}" />-->
+    <script defer th:src="@{~/js/Nav.js}"></script>
+
+
+</head>
+<body>
+<div th:replace="Fragments/userNav.html :: navigation"></div>
+
+<div style="overflow: scroll; margin-top:15px ">
+
+<table id="table_id" style="overflow: auto">
+    <thead>
+    <tr>
+        <th>id</th>
+        <th>Fullname</th>
+        <th>ApplicantID</th>
+        <th>Email</th>
+        <th>Mobile Number</th>
+        <th>Identity Type</th>
+        <th>Identity num</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>JobsID</th>
+        <th>Jobs Title</th>
+        <th>Category</th>
+        <th>Resume</th>
+        <th>Action</th>
+        <th>Edit</th>
+<!--        <th>Status</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user:${applicationData}">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.getUser_id().getFullname()}"></td>
+        <td th:text="${user.getUser_id().id}"></td>
+        <td th:text="${user.getUser_id().getEmail()}"></td>
+        <td th:text="${user.getUser_id().getMobileNo()}"></td>
+        <td th:text="${user.id_type}"></td>
+        <td th:text="${user.id_num}"></td>
+        <td th:text="${user.gender}"></td>
+        <td th:text="${user.address}"></td>
+        <td th:text="${user.getJobs_id().id}"></td>
+        <td th:text="${user.getJobs_id().getJobTitle()}"></td>
+        <td th:text="${user.getJobs_id().getCategory()}"></td>
+<!--        <td th:text="${user.file}"></td>-->
+        <td><img th:src="'data:image/png;base64,'+${user.file}" width="100" height="100"/></td>
+        <td> <a class="" th:href="@{~/user/deleteApp/}+${user.id}" >Cancel</a></td>
+        <td> <a class="" th:href="@{~/user/editApplication/}+${user.id}" >Edit</a></td>
+<!--        <td> <a class=""  >Approved</a></td>-->
+
+    </tr>
+    </tbody>
+</table>
+</div>
+
+<script
+        type="text/javascript"
+        charset="utf8"
+        src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"
+></script>
+<script
+        type="text/javascript"
+        charset="utf8"
+        src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js">
+    document.getElementsByClassName()
+</script>
+<script>
+    $(function() {
+        $("#table_id").dataTable();
+    });
+</script>
+
+</body>
+<!--<script>-->
+<!--    let myPage = "profile";-->
+<!--    let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));-->
+<!--    listGroupItem.forEach(i=>{-->
+<!--        i.classList.remove("active")-->
+<!--    })-->
+<!--    let activeID = document.getElementById(myPage);-->
+<!--    activeID.classList.add("active");-->
+<!--</script>-->
+
+</html>

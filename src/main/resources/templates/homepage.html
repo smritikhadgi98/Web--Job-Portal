@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>JobCom:Find your dream job here with us</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+<!--  <link rel="shortcut icon" type="x-icon" href="images/logo1.png">-->
+  <link rel="shortcut icon" type="x-icon" th:href="@{~/Images/logo1.png}">
+  <link rel="stylesheet" th:href="@{~/css/footer.css}">
+  <link rel="stylesheet" th:href="@{~/css/navigation.css}">
+  <link rel="stylesheet" th:href="@{~/css/HomepageStyle.css}">
+
+
+</head>
+
+
+<body onload="load()">
+
+<div th:replace="Fragments/userNav.html :: navigation"></div>
+
+  <section>
+    <!-- image -->
+    <!-- image -->
+    <div class="intro">
+      <div class="image">
+        <div class="cover">
+          <h1>JobCom : The Easiest Way to get your dream Jobs..</h1>
+          <button><a th:href="@{~/user/jobs}" class="findjobs">Find Jobs</a></button>
+        </div>
+      </div>
+    </div>
+
+
+
+<!--    word-break: break-word;-->
+
+
+    <div class="Jobs">
+      <div class="heading">
+        <h1>Active Jobs</h1>
+      </div>
+      <div class="activeJobs">
+        <div class="job_ind" th:each="jobs:${joblist}">
+          <img th:src="'data:image/png;base64,'+${jobs.imageBase64}" height="200" width="100" alt="">
+          <h2 th:text="${jobs.category}"></h2>
+          <p  th:text="${jobs.type}" class="type">**</p>
+<!--          <h2 th:text="${jobs.type}"></h2>-->
+          <h2 th:text="${jobs.jobTitle}">*</h2>
+           <p th:text="${jobs.time_description}"></p>
+          <h2 th:text="${jobs.address}"></h2>
+<!--          <button><a th:href="@{~/jobs/edit/}+${jobs.id}" >Apply</a></button>-->
+          <button><a th:href="@{~/jobs/applyjobs/}+${jobs.id}">More Info</a></button>
+        </div>
+        <button><a th:href="@{~/user/jobs}">See More</a></button>
+      </div>
+    </div>
+
+    <div class="CheckTeam">
+      <h1>See Our Teams</h1>
+      <br>
+      <div class="GalleryPic">
+        <div class="info1" th:each="teams:${teamlist}">
+          <td><img th:src="'data:image/png;base64,'+${teams.imageBase64}" width="100" height="200"/></td>
+          <h1 th:text="${teams.fullname}"></h1>
+          <p th:text="${teams.department}"></p>
+<!--          <p th:text="${teams.department}"></p>-->
+          <p th:text="${teams.contact}"></p>
+          <a th:href="${teams.facebook}"><i class="facebook fab fa-facebook-f"></i></a>
+          <a th:href="${teams.linkedin}"><i class="linked fab fa-linkedin"></i></a>
+           <a th:href="${teams.github}"><i class="git fab fa-github"></i></a>
+
+        </div>
+        <br>
+      </div>
+    </div>
+    <!-- reviews -->
+
+    <div class="AskAcc">
+      <div class="info">
+        <h1>Looking for a job?</h1>
+        <p>Lorem, ipsum dolor accusantium quaerat sed architecto enim qui officia eaque ipsam, voluptas, maiores quidem pariatur nihil perspiciatis possimus?</p>
+      </div>
+      <a href="#">Signup now</a>
+    </div>
+
+
+    <div class="reviews">
+      <div class="comments">
+        <h1>Read our Achivements</h1>
+        <br>
+      </div>
+      <div class="mainmessage">
+        <div class="messages">
+          <p>Lorem ipsum dolor sit amet
+            consectetur, adipisicing elit.
+            Repellat beatae hic animi voluptatum
+            tenetur commodi odit eius minus
+            iusto ea, maxime necessitatibus
+            ab quae sunt, voluptates pariatur ipsum
+            vero cupiditate.</p>
+          <div class="detail">
+            <!-- <img src="images/bar2.jpg" alt=""> -->
+            <h3>Smriti Khadgi  </h3>
+            <a href="#">Readmore</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </section>
+<div th:replace="Fragments/UserFooter.html :: footer"></div>
+
+</body>
+
+<script>
+  let myPage = "home";
+  let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+  listGroupItem.forEach(i=>{
+    i.classList.remove("active")
+  })
+  let activeID = document.getElementById(myPage);
+  activeID.classList.add("active");
+</script>
+
+</html>

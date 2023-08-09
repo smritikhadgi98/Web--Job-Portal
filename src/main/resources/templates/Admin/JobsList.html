@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{~/css/AdminCss/mdb.min.css}" rel="stylesheet">
+    <script th:src="@{~/js/admin/mdb.min.js}"></script>
+<!--    <link rel="stylesheet" th:href="@{~/css/JobListStyle.css}">-->
+    <link rel="shortcut icon" type="x-icon" th:href="@{~/Images/logo.png}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" th:href="@{~/css/AdminCss/adminNav.css}">
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css"/>
+
+    <title>MeroJagir: All List of Jobs available </title>
+</head>
+<body>
+<!--Main Navigation-->
+<div th:replace="Fragments/AdminSlide.html :: slider"></div>
+
+<main style="margin-top: 58px;">
+    <div class="container pt-4">
+        <div style="overflow: scroll">
+            <table  id="table_id">
+                <thead>
+                <tr>
+                    <th>Job ID</th>
+                    <th>Job Title</th>
+                    <th>Category</th>
+<!--                    <th>Salary</th>-->
+                    <th>Address</th>
+                    <th>Type</th>
+                    <th>Time-Description</th>
+                    <th>Full Description</th>
+                    <th>Salary</th>
+                    <th>Experience1</th>
+                    <th>Experience2</th>
+                    <th>Education</th>
+                    <th>Qualification1</th>
+                    <th>Qualification2</th>
+                    <th>Qualification3</th>
+                    <th>Skill1</th>
+                    <th>Skill2</th>
+                    <th>Skill3</th>
+                    <th>Skill4</th>
+                    <th>Contact</th>
+                    <th>Image</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="jobs:${jobslist}">
+                    <td th:text="${jobs.id}"></td>
+                    <td th:text="${jobs.jobTitle}"></td>
+                    <td th:text="${jobs.category}"></td>
+<!--                    <td th:text="${jobs.salary}"></td>-->
+                    <td th:text="${jobs.address}"></td>
+                    <td th:text="${jobs.type}"></td>
+                    <td th:text="${jobs.time_description}"></td>
+                    <td th:text="${jobs.full_description}"></td>
+                    <td th:text="${jobs.salary}"></td>
+                    <td th:text="${jobs.experience1}"></td>
+                    <td th:text="${jobs.experience2}"></td>
+                    <td th:text="${jobs.education}"></td>
+                    <td th:text="${jobs.qualification1}"></td>
+                    <td th:text="${jobs.qualification2}"></td>
+                    <td th:text="${jobs.qualification3}"></td>
+                    <td th:text="${jobs.skill1}"></td>
+                    <td th:text="${jobs.skill2}"></td>
+                    <td th:text="${jobs.skill3}"></td>
+                    <td th:text="${jobs.skill4}"></td>
+                    <td th:text="${jobs.contact}"></td>
+                    <td><img th:src="'data:image/png;base64,'+${jobs.imageBase64}" width="100" height="100"/></td>
+                    <td> <a class="All_button" th:href="@{~/jobs/edit/}+${jobs.id}" >Edit</a></td>
+                    <!--          <td> <a class="edit" th:href="@{~/jobs/edit/}+${jobs.id}" ><i class="fa-solid fa-user-pen"></i></a></td>-->
+                    <td> <a class="All_button" th:href="@{~/jobs/delete/}+${jobs.id}" >Delete</a></td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+<script
+        type="text/javascript"
+        charset="utf8"
+        src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"
+></script>
+<script
+        type="text/javascript"
+        charset="utf8"
+        src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js">
+    document.getElementsByClassName()
+</script>
+<script>
+    $(function() {
+        $("#table_id").dataTable();
+    });
+</script>
+
+</body>
+<script>
+    let myPage = "jobs";
+    let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+    listGroupItem.forEach(i=>{
+        i.classList.remove("active")
+    })
+    let activeID = document.getElementById(myPage);
+    activeID.classList.add("active");
+</script>
+</html>

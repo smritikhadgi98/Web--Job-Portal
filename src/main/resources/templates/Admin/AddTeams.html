@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" th:href="@{~/css/Admincss/Addjobs.css}">
+  <link rel="stylesheet" th:href="@{~/css/AdminCss/adminNav.css}">
+  <link th:href="@{~/css/AdminCss/mdb.min.css}" rel="stylesheet">
+  <script th:src="@{~/js/admin/mdb.min.js}"></script>
+  <script th:src="@{~/js/addTeam.js}" defer></script>
+  <link rel="shortcut icon" type="x-icon" th:href="@{~/Images/logo.png}">
+<title>MeroJagir: All team Member</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div th:replace="Fragments/AdminSlide.html :: slider"></div>
+<div class="body-body">
+  <div class="container_div">
+    <div class="title">Create Member</div>
+    <div class="content">
+      <form th:method="post" id="form" th:action="@{/admin/saveTeam}" th:object="${teams}"
+            enctype="multipart/form-data">
+        <input type="text" hidden th:field="*{id}" th:value="${teams.id}">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details" for="fullname">Fullname</span>
+            <input type="text" id="fullname" placeholder="Enter fullname" th:field="*{fullname} "
+                   th:value="${teams.fullname}">
+            <div class="error"></div>
+          </div>
+
+          <div class="input-box">
+            <span class="details" for="address">Address</span>
+            <input type="text" id="address" placeholder="Enter address" th:field="*{address} "
+                   th:value="${teams.address}">
+            <div class="error"></div>
+          </div>
+
+          <div class="input-box">
+            <span class="details" for="contact">Contact</span>
+            <input type="text" id="contact" placeholder="Enter contact info" th:field="*{contact} "
+                   th:value="${teams.contact}">
+            <div class="error"></div>
+          </div>
+
+          <div class="input-box">
+            <span class="details" for="department">Department</span>
+            <input type="text" id="department" placeholder="Enter theDepartment" th:field="*{department} "
+                   th:value="${teams.department}">
+            <div class="error"></div>
+          </div>
+
+          <div class="input-box">
+            <span class="details" for="email">Email</span>
+            <input type="text" placeholder="Enter email" id="email" th:field="*{email} " th:value="${teams.email}">
+            <div class="error"></div>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Facebook</span>
+            <input type="text" id="facebook" placeholder="Enter facebook" th:field="*{facebook} "
+                   th:value="${teams.facebook}">
+            <div class="error"></div>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Github</span>
+            <input type="text" id="github" placeholder="Enter github" th:field="*{github} "
+                   th:value="${teams.github}">
+            <div class="error"></div>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Linkedin</span>
+            <input type="text" id="linkedin" placeholder="Enter linkedin" th:field="*{linkedin} "
+                   th:value="${teams.linkedin}">
+            <div class="error"></div>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Image </span>
+            <input type="file" id="file" name="image" accept="image/*">
+            <div class="error"></div>
+          </div>
+
+          <div class="button">
+            <input type="submit" value="Register">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
+</body>
+<script>
+  let myPage = "addmembers";
+  let listGroupItem = Array.from(document.getElementsByClassName("list-group-item"));
+  listGroupItem.forEach(i=>{
+    i.classList.remove("active")
+  })
+  let activeID = document.getElementById(myPage);
+  activeID.classList.add("active");
+</script>
+</html>
