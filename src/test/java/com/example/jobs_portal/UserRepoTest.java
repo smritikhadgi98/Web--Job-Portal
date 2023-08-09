@@ -31,11 +31,11 @@ public class UserRepoTest {
     public void saveUser() {
 
         User user = User.builder()
-                .email("abi@gmail.com")
-                .password("1234")
-                .fullname("code")
-                .image("abi.jgp")
-                .mobileNo("123123")
+                .email("sarika@gmail.com")
+                .password("12345")
+                .fullname("Sarika")
+                .image("pandu.png")
+                .mobileNo("9874561230")
 
                 .build();
 //
@@ -65,9 +65,9 @@ public class UserRepoTest {
     @Rollback(value = false)
     public void Update() {
         User user = userRepo.findById(1).get();
-        user.setFullname("Abishek");
+        user.setFullname("Sarika");
         User user1 = userRepo.save(user);
-        Assertions.assertThat(user1.getFullname()).isEqualTo("Abishek");
+        Assertions.assertThat(user1.getFullname()).isEqualTo("Sarika");
     }
     //
     @Test
@@ -77,7 +77,7 @@ public class UserRepoTest {
         User user=userRepo.findById(1).get();
         userRepo.delete(user);
         User user1=null;
-        Optional<User> userOptional=userRepo.findByEmail("abi@gamil.com");
+        Optional<User> userOptional=userRepo.findByEmail("sarika@gamil.com");
         if(userOptional.isPresent()){
             user1 = userOptional.get();
         }

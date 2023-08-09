@@ -30,14 +30,14 @@ public class TeamsRepoTest {
 
         Teams teams = Teams.builder()
                 .address("ktm")
-                .contact("1231231234")
-                .email("abi@gmail.com")
+                .contact("9874561230")
+                .email("sarika@gmail.com")
                 .department("Programming")
                 .facebook("www.facebook.com")
                 .github("www.github.com")
                 .linkedin("www.linked.com")
-                .fullname("Abishek")
-                .image("abi.jgp")
+                .fullname("Sarika")
+                .image("pandu.jgp")
 
                 .build();
 //
